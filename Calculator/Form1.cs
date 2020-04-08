@@ -233,7 +233,7 @@ namespace Calculator
 
             else
             {
-                textBox1.Text = Convert.ToDouble(textBox1.Text) * -1+ "" ;       //два знака подряд и солв не меняет
+                textBox1.Text = Convert.ToDouble(textBox1.Text) * -1+ "" ;      
                // textBox1.Text = tmp1 + "";
             }
            
