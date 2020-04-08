@@ -78,6 +78,7 @@ namespace Calculator
             Calc = null;
             textBox1.Text  = "";
             textBox2.Text  = "";
+            
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -96,6 +97,7 @@ namespace Calculator
                 textBox1.Text = "";
                 textBox2.Text = tmp1 + "";
                 Calc = new Adder();
+               ;
             }
         }
 
@@ -124,8 +126,7 @@ namespace Calculator
             {
                 if (Calc != null)
                 {
-                    tmp1 = Calc.DoMath(tmp1, Convert.ToDouble(textBox1.Text));
-
+                        tmp1 = Calc.DoMath(tmp1, Convert.ToDouble(textBox1.Text));
                 }
                 else
                 {
@@ -165,6 +166,38 @@ namespace Calculator
                 textBox1.Text = Calc.DoMath(tmp1, tmp2) + "";
                 textBox2.Text = textBox1.Text ;
             }
+        }
+
+        private void comma_Click(object sender, EventArgs e)   //как убрать две запятые подряд
+        {
+            if (textBox1.Text != "")
+            {
+                if (Convert.ToDouble(textBox1.Text) % 1 == 0 )
+                {
+                    textBox1.Text = textBox1.Text + ",";
+                }
+            }
+
+            else 
+            {
+                textBox1.Text = textBox1.Text + "0,";
+            }
+            
+        }
+
+        private void changeSign_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(textBox1.Text) > 0)
+            {
+                textBox1.Text = "-" + textBox1.Text;
+            }
+            else
+            {
+                textBox1.Text = "" + textBox1.Text;
+                textBox1.Text = tmp1 + "";
+            }
+           
+
         }
 
         public void AddToTextbox(string a)

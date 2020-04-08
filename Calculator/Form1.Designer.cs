@@ -46,6 +46,8 @@
             this.divide = new System.Windows.Forms.Button();
             this.remove = new System.Windows.Forms.Button();
             this.solve = new System.Windows.Forms.Button();
+            this.comma = new System.Windows.Forms.Button();
+            this.changeSign = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -225,7 +227,7 @@
             // remove
             // 
             this.remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.remove.Location = new System.Drawing.Point(437, 385);
+            this.remove.Location = new System.Drawing.Point(377, 385);
             this.remove.Name = "remove";
             this.remove.Size = new System.Drawing.Size(98, 77);
             this.remove.TabIndex = 16;
@@ -236,7 +238,7 @@
             // solve
             // 
             this.solve.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.solve.Location = new System.Drawing.Point(437, 290);
+            this.solve.Location = new System.Drawing.Point(492, 386);
             this.solve.Name = "solve";
             this.solve.Size = new System.Drawing.Size(98, 77);
             this.solve.TabIndex = 17;
@@ -244,11 +246,35 @@
             this.solve.UseVisualStyleBackColor = true;
             this.solve.Click += new System.EventHandler(this.solve_Click);
             // 
+            // comma
+            // 
+            this.comma.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comma.Location = new System.Drawing.Point(492, 303);
+            this.comma.Name = "comma";
+            this.comma.Size = new System.Drawing.Size(98, 77);
+            this.comma.TabIndex = 18;
+            this.comma.Text = ",";
+            this.comma.UseVisualStyleBackColor = true;
+            this.comma.Click += new System.EventHandler(this.comma_Click);
+            // 
+            // changeSign
+            // 
+            this.changeSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.changeSign.Location = new System.Drawing.Point(377, 302);
+            this.changeSign.Name = "changeSign";
+            this.changeSign.Size = new System.Drawing.Size(98, 77);
+            this.changeSign.TabIndex = 19;
+            this.changeSign.Text = "+/-";
+            this.changeSign.UseVisualStyleBackColor = true;
+            this.changeSign.Click += new System.EventHandler(this.changeSign_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 474);
+            this.Controls.Add(this.changeSign);
+            this.Controls.Add(this.comma);
             this.Controls.Add(this.solve);
             this.Controls.Add(this.remove);
             this.Controls.Add(this.divide);
@@ -295,6 +321,8 @@
         private System.Windows.Forms.Button divide;
         private System.Windows.Forms.Button remove;
         private System.Windows.Forms.Button solve;
+        private System.Windows.Forms.Button comma;
+        private System.Windows.Forms.Button changeSign;
     }
 }
 
