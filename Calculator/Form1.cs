@@ -125,7 +125,7 @@ namespace Calculator
                     tmp1 =  Convert.ToDouble(textBox1.Text);
                 }
                 textBox1.Text = "";
-                textBox2.Text = tmp1 + "";
+                textBox2.Text =tmp1+"+";
                 Calc = new Adder();
                ;
             }
@@ -145,13 +145,14 @@ namespace Calculator
                         tmp1 = Convert.ToDouble(textBox1.Text);
                     }
                 textBox1.Text = "";
-                textBox2.Text = tmp1 + "";
+                textBox2.Text = tmp1 + "-";
                 Calc = new Substractor();
             }
 
             else
             {
                 textBox1.Text = "-";
+
             }
         }
 
@@ -169,7 +170,7 @@ namespace Calculator
                 }
                 
                 textBox1.Text = "";
-                textBox2.Text = tmp1 + "";
+                textBox2.Text = tmp1 + "*";
                 Calc = new Multiplicator();
             }
         }
@@ -180,9 +181,12 @@ namespace Calculator
             {
                 if (Calc != null)
                 {
-                        tmp1 = Calc.DoMath(tmp1, Convert.ToDouble(textBox1.Text));
-                    
+                    if (Convert.ToDouble ( textBox1.Text) != 0)
+                    { tmp1 = Calc.DoMath(tmp1, Convert.ToDouble(textBox1.Text)); }
 
+                    else
+                    { textBox1.Text = "error"; }   //не выводит еррор
+                    
                 }
 
                 else
@@ -190,7 +194,7 @@ namespace Calculator
                     tmp1 = Convert.ToDouble(textBox1.Text);
                 }
                 textBox1.Text = "";
-                textBox2.Text = tmp1 + "";
+                textBox2.Text = tmp1 + "/";
                 Calc = new Divider();
             }
 
@@ -203,7 +207,9 @@ namespace Calculator
             {
                 tmp2 = Convert.ToDouble(textBox1.Text);
                 textBox1.Text = Calc.DoMath(tmp1, tmp2) + "";
-                textBox2.Text = textBox1.Text ;
+                tmp1 = Calc.DoMath(tmp1, tmp2);
+                textBox2.Text =tmp1+"" ;
+                textBox1.Text = "";
             }
         }
 
