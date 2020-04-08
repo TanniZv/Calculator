@@ -23,52 +23,82 @@ namespace Calculator
 
         private void number1_Click(object sender, EventArgs e)
         {
-            AddToTextbox("1");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("1");
+            }
         }
 
         private void number2_Click(object sender, EventArgs e)
         {
-            AddToTextbox("2");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("2");
+            }
         }
 
         private void number3_Click(object sender, EventArgs e)
         {
-            AddToTextbox("3");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("3");
+            }
         }
 
         private void number4_Click(object sender, EventArgs e)
         {
-            AddToTextbox("4");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("4");
+            }
         }
 
         private void number5_Click(object sender, EventArgs e)
         {
-            AddToTextbox("5");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("5");
+            }
         }
 
         private void number6_Click(object sender, EventArgs e)
         {
-            AddToTextbox("6");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("6");
+            }
         }
 
         private void number7_Click(object sender, EventArgs e)
         {
-            AddToTextbox("7");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("7");
+            }
         }
 
         private void number8_Click(object sender, EventArgs e)
         {
-            AddToTextbox("8");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("8");
+            }
         }
 
         private void number9_Click(object sender, EventArgs e)
         {
-            AddToTextbox("9");
+            if (textBox1.Text  != "0" )
+            {
+                AddToTextbox("9");
+            }
         }
 
         private void number0_Click(object sender, EventArgs e)
         {
-            AddToTextbox("0");
+            if (textBox1.Text != "0")
+            {
+                AddToTextbox("0");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -118,6 +148,11 @@ namespace Calculator
                 textBox2.Text = tmp1 + "";
                 Calc = new Substractor();
             }
+
+            else
+            {
+                textBox1.Text = "-";
+            }
         }
 
         private void multiply_Click(object sender, EventArgs e)
@@ -139,15 +174,17 @@ namespace Calculator
             }
         }
 
-        private void divide_Click(object sender, EventArgs e)
+        private void divide_Click(object sender, EventArgs e)   //деление на 0
         {
             if (textBox1.Text != "")
             {
                 if (Calc != null)
                 {
-                    tmp1 = Calc.DoMath(tmp1, Convert.ToDouble(textBox1.Text));
+                        tmp1 = Calc.DoMath(tmp1, Convert.ToDouble(textBox1.Text));
+                    
 
                 }
+
                 else
                 {
                     tmp1 = Convert.ToDouble(textBox1.Text);
@@ -156,6 +193,8 @@ namespace Calculator
                 textBox2.Text = tmp1 + "";
                 Calc = new Divider();
             }
+
+           
         }
 
         private void solve_Click(object sender, EventArgs e)
@@ -189,12 +228,13 @@ namespace Calculator
         {
             if (Convert.ToDouble(textBox1.Text) > 0)
             {
-                textBox1.Text = "-" + textBox1.Text;
+                textBox1.Text = "-"+ Convert.ToDouble(textBox1.Text);
             }
+
             else
             {
-                textBox1.Text = "" + textBox1.Text;
-                textBox1.Text = tmp1 + "";
+                textBox1.Text = Convert.ToDouble(textBox1.Text) * -1+ "" ;       //два знака подряд и солв не меняет
+               // textBox1.Text = tmp1 + "";
             }
            
 
